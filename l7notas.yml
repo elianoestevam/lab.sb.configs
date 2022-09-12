@@ -1,0 +1,43 @@
+eureka:
+    client:
+        fetch-registry: true
+        register-with-eureka: true
+        serviceUrl:
+            defaultZone: http://localhost:8761/eureka/
+    instance:
+        lease-expiration-duration-in-seconds: 1
+        lease-renewal-interval-in-seconds: 2
+        preferIpAddress: true
+logging:
+    file: /app/log/iteam.log
+    level:
+        root: WARN
+        root.org.hibernate: ERROR
+        root.org.springframework: INFO
+        root.org.springframework.web: DEBUG
+security:
+    oauth2:
+        client:
+            client-id: lab.sb
+            client-secret: pin
+        resource:
+            token-info-uri: http://localhost:8180/lab-auth-api/oauth/check_token
+server:
+    port: 8280
+    servlet:
+        context-path: /l7notas-api
+spring:
+    application:
+        name: l7notas
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: 1234
+        url: jdbc:mysql://localhost:3306/lab_sb?useSSL=false&createDatabaseIfNotExist=true
+        username: root
+    jpa:
+        database-platform: org.hibernate.dialect.MySQL57Dialect
+    cache:
+        type: redis
+    redis: 
+        host: localhost
+        port: 6379
