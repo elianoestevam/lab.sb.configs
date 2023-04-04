@@ -32,7 +32,7 @@ spring:
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
         password: 1234
-        url: jdbc:mysql://localhost:3306/lab_sb?useSSL=false&createDatabaseIfNotExist=true
+        url: jdbc:mysql://localhost:3306/lab_sb?useSSL=false&createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
         username: root
     jpa:
         database-platform: org.hibernate.dialect.MySQL57Dialect
